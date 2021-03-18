@@ -38,21 +38,28 @@ class CustomImagePickerPlugin(internal var activity: Activity, internal var meth
     init {
         this.methodChannel.setMethodCallHandler(this)
         this.activityLifecycleCallbacks = object : Application.ActivityLifecycleCallbacks {
-            // override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle) {}
-
-            override fun onActivityStarted(activity: Activity) {}
-
-            override fun onActivityResumed(activity: Activity) {
-                getPermissionResult(result!!, activity, {})
+            
+            override fun onActivityPaused(p0: Activity) {
             }
 
-            override fun onActivityPaused(activity: Activity) {}
+            override fun onActivityResumed(p0: Activity) {
+                getPermissionResult(result!!, p0, {})
+            }
 
-            override fun onActivityStopped(activity: Activity) {}
+            override fun onActivityStarted(p0: Activity) {
+            }
 
-            override fun onActivitySaveInstanceState(activity: Activity, outState: Bundle) {}
+            override fun onActivityDestroyed(p0: Activity) {
+            }
 
-            override fun onActivityDestroyed(activity: Activity) {}
+            override fun onActivitySaveInstanceState(p0: Activity, p1: Bundle) {
+            }
+
+            override fun onActivityStopped(p0: Activity) {
+            }
+
+            override fun onActivityCreated(p0: Activity, p1: Bundle?) {
+            }
         }
     }
 
