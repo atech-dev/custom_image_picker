@@ -38,7 +38,7 @@ class CustomImagePickerPlugin(internal var activity: Activity, internal var meth
     init {
         this.methodChannel.setMethodCallHandler(this)
         this.activityLifecycleCallbacks = object : Application.ActivityLifecycleCallbacks {
-            override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle) {}
+            // override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle) {}
 
             override fun onActivityStarted(activity: Activity) {}
 
